@@ -6,16 +6,34 @@
 
 using namespace std;
 
+
+
+// 自定義比較函式
+bool compare(int a, int b) {
+    return a < b; // 升序排序
+}
+class Interval {
+public:
+    int start, end;
+    Interval(int start, int end) {
+        this->start = start;
+        this->end = end;
+    }
+};
+
+std::ostream& operator<<(std::ostream& os, const Interval& interval) {
+    os << "[" << interval.start << ", " << interval.end << "]";
+    return os;
+}
+
 int main() 
 {
-    unordered_set<int> mySet = {1, 2, 3, 4, 5, 3, 3};
-    if (mySet.count(3) > 0) 
-    {
-        cout << mySet.count(3) << endl;
-    } 
-    else 
-    {
-        cout << "Element 3 does not exist in the unordered_set." << endl;
-    }
+    int i=9;
+    if(i)
+        cout << "o";
+    else
+        cout << "x";
+
+
     return 0;
 }
